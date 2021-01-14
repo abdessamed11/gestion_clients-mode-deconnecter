@@ -46,12 +46,12 @@ namespace gestion_clients
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.combo_villes = new System.Windows.Forms.ComboBox();
             this.villesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gestion_cltDataSet = new gestion_clients.gestion_cltDataSet();
             this.villesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.villesTableAdapter = new gestion_clients.gestion_cltDataSetTableAdapters.villesTableAdapter();
             this.btn_trie = new System.Windows.Forms.Button();
+            this.cbville = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.villesBindingSource)).BeginInit();
@@ -206,19 +206,6 @@ namespace gestion_clients
             this.label5.TabIndex = 16;
             this.label5.Text = "ville :";
             // 
-            // combo_villes
-            // 
-            this.combo_villes.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.villesBindingSource, "id", true));
-            this.combo_villes.DataSource = this.villesBindingSource1;
-            this.combo_villes.DisplayMember = "villes";
-            this.combo_villes.FormattingEnabled = true;
-            this.combo_villes.Location = new System.Drawing.Point(382, 223);
-            this.combo_villes.Name = "combo_villes";
-            this.combo_villes.Size = new System.Drawing.Size(156, 28);
-            this.combo_villes.TabIndex = 17;
-            this.combo_villes.ValueMember = "id";
-            this.combo_villes.SelectedIndexChanged += new System.EventHandler(this.combo_villes_SelectedIndexChanged);
-            // 
             // villesBindingSource
             // 
             this.villesBindingSource.DataMember = "villes";
@@ -240,21 +227,41 @@ namespace gestion_clients
             // 
             // btn_trie
             // 
-            this.btn_trie.Location = new System.Drawing.Point(295, 217);
+            this.btn_trie.Location = new System.Drawing.Point(295, 206);
             this.btn_trie.Name = "btn_trie";
             this.btn_trie.Size = new System.Drawing.Size(81, 38);
             this.btn_trie.TabIndex = 19;
-            this.btn_trie.Text = "trier";
+            this.btn_trie.Text = "chercher";
             this.btn_trie.UseVisualStyleBackColor = true;
             this.btn_trie.Click += new System.EventHandler(this.btn_trie_Click);
+            // 
+            // cbville
+            // 
+            this.cbville.DropDownWidth = 300;
+            this.cbville.FormattingEnabled = true;
+            this.cbville.Items.AddRange(new object[] {
+            "casablanca",
+            "rabat",
+            "settat",
+            "youssoufia",
+            "safi",
+            "marrakech",
+            "meknes",
+            "fes",
+            "tanger"});
+            this.cbville.Location = new System.Drawing.Point(295, 165);
+            this.cbville.Name = "cbville";
+            this.cbville.Size = new System.Drawing.Size(241, 28);
+            this.cbville.TabIndex = 20;
+            this.cbville.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1014, 523);
+            this.Controls.Add(this.cbville);
             this.Controls.Add(this.btn_trie);
-            this.Controls.Add(this.combo_villes);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -298,12 +305,12 @@ namespace gestion_clients
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox combo_villes;
         private gestion_cltDataSet gestion_cltDataSet;
         private System.Windows.Forms.BindingSource villesBindingSource;
         private gestion_cltDataSetTableAdapters.villesTableAdapter villesTableAdapter;
         private System.Windows.Forms.BindingSource villesBindingSource1;
         private System.Windows.Forms.Button btn_trie;
+        private System.Windows.Forms.ComboBox cbville;
     }
 }
 

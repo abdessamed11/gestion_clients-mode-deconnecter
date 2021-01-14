@@ -49,7 +49,7 @@ namespace gestion_clients
                 dtclient = DS.Tables["clients"];
                 vl.Fill(DS, "villes");
                 dataGridView1.DataSource = DS.Tables["clients"];
-                combo_villes.DataSource = DS.Tables["villes"];
+                //combo_villes.DataSource = DS.Tables["villes"];
                 dv = new DataView(dtclient);
             }
             catch(Exception ex)
@@ -141,11 +141,18 @@ namespace gestion_clients
         {
             SqlCommandBuilder scb = new SqlCommandBuilder(DA);
             DA.Update(DS, "clients");
+            MessageBox.Show("mise à jour effectué avec succés");
         }
 
         private void btn_trie_Click(object sender, EventArgs e)
         {
-
+            
+            
+            DA = new SqlDataAdapter("Select * from clients where ville ='" + cbville.Text + "'", cnx);
+            DS.Tables["clients"].Clear();
+            DA.Fill(DS, "clients");
+            
+            dataGridView1.DataSource = DS.Tables["clients"];
         }
 
         private void combo_villes_SelectedIndexChanged(object sender, EventArgs e)
@@ -160,6 +167,18 @@ namespace gestion_clients
             {
 
             }*/
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            
+
+        }
+
+        private void btn_vider_Click(object sender, EventArgs e)
+        {
+            //dataGridView1.Rows.Clear();
         }
     }
 }
