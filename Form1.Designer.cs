@@ -52,6 +52,8 @@ namespace gestion_clients
             this.villesTableAdapter = new gestion_clients.gestion_cltDataSetTableAdapters.villesTableAdapter();
             this.btn_trie = new System.Windows.Forms.Button();
             this.cbville = new System.Windows.Forms.ComboBox();
+            this.txt_chercher = new System.Windows.Forms.TextBox();
+            this.btn_all = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.villesBindingSource)).BeginInit();
@@ -120,9 +122,9 @@ namespace gestion_clients
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(295, 115);
+            this.button5.Location = new System.Drawing.Point(32, 115);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(110, 39);
+            this.button5.Size = new System.Drawing.Size(373, 39);
             this.button5.TabIndex = 16;
             this.button5.Text = "Mise à jour";
             this.button5.UseVisualStyleBackColor = true;
@@ -160,9 +162,12 @@ namespace gestion_clients
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(295, 267);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(681, 224);
@@ -227,7 +232,7 @@ namespace gestion_clients
             // 
             // btn_trie
             // 
-            this.btn_trie.Location = new System.Drawing.Point(295, 206);
+            this.btn_trie.Location = new System.Drawing.Point(295, 155);
             this.btn_trie.Name = "btn_trie";
             this.btn_trie.Size = new System.Drawing.Size(81, 38);
             this.btn_trie.TabIndex = 19;
@@ -249,17 +254,38 @@ namespace gestion_clients
             "meknes",
             "fes",
             "tanger"});
-            this.cbville.Location = new System.Drawing.Point(295, 165);
+            this.cbville.Location = new System.Drawing.Point(295, 110);
             this.cbville.Name = "cbville";
             this.cbville.Size = new System.Drawing.Size(241, 28);
             this.cbville.TabIndex = 20;
+            this.cbville.Text = "                 filtrer par ville";
             this.cbville.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // txt_chercher
+            // 
+            this.txt_chercher.Location = new System.Drawing.Point(295, 66);
+            this.txt_chercher.Name = "txt_chercher";
+            this.txt_chercher.Size = new System.Drawing.Size(241, 26);
+            this.txt_chercher.TabIndex = 21;
+            // 
+            // btn_all
+            // 
+            this.btn_all.Location = new System.Drawing.Point(455, 157);
+            this.btn_all.Name = "btn_all";
+            this.btn_all.Size = new System.Drawing.Size(81, 38);
+            this.btn_all.TabIndex = 22;
+            this.btn_all.Text = "All";
+            this.btn_all.UseVisualStyleBackColor = true;
+            this.btn_all.Click += new System.EventHandler(this.btn_all_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1014, 523);
+            this.Controls.Add(this.btn_all);
+            this.Controls.Add(this.txt_chercher);
             this.Controls.Add(this.cbville);
             this.Controls.Add(this.btn_trie);
             this.Controls.Add(this.label5);
@@ -274,8 +300,10 @@ namespace gestion_clients
             this.Controls.Add(this.name);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.id);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.TransparencyKey = System.Drawing.SystemColors.ActiveCaptionText;
             this.Load += new System.EventHandler(this.Form1_Load_1);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -311,6 +339,8 @@ namespace gestion_clients
         private System.Windows.Forms.BindingSource villesBindingSource1;
         private System.Windows.Forms.Button btn_trie;
         private System.Windows.Forms.ComboBox cbville;
+        private System.Windows.Forms.TextBox txt_chercher;
+        private System.Windows.Forms.Button btn_all;
     }
 }
 
